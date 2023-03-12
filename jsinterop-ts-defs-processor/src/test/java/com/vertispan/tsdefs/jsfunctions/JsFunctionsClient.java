@@ -15,6 +15,7 @@
  */
 package com.vertispan.tsdefs.jsfunctions;
 
+import com.vertispan.tsdefs.annotations.TsInterface;
 import jsinterop.annotations.JsType;
 
 @JsType
@@ -31,4 +32,11 @@ public class JsFunctionsClient {
       TakesArgsReturnsTypeJsFunction takesArgsReturnsTypeJsFunction) {
     return (id, name) -> true;
   };
+
+  public void useGenericFuncWithParam(GenericArgsFunction<String> func) {}
+
+  public <T> void useGenericFuncWithTypeParam(GenericArgsFunction<T> func) {}
+
+  public void useWildcardGenericFunc(GenericArgsFunction<?> func) {}
 }
+
